@@ -1,11 +1,34 @@
 <%- include('./partials/head') %>
 
-<section class="maincontainer">
-  <section class="card">
-    <div class="front">
-      
-    </div>
-  </section>
+<header>
+
+  <li><a href="/?squad=squad-a-2022">squad a</a></li>
+  <li><a href="/?squad=squad-b-2022">squad b</a></li>
+  <li><a href="/?squad=squad-c-2022">squad c</a></li>
+</header>
+
+<nav>
+  <li>Sorteren op</li>
+  <li><a href="/?squad<%= squad.slug %>&orderBy=name">Naam</a></li>
+  <li><a href="">Achternaam</a></li>
+</nav>
+
+<section class="squad-cards">
+  <% squad.members.forEach(member => { %>
+    <article>
+      <div>
+        <% if (member.avatar) { %>
+          <img src="<%= member.avatar %>" alt="De avatar van <%= member.name %>" />
+          <% }else{ %>
+          <img src="/placeholder.png" alt="Placeholder avatar" />
+        <% } %>
+        <h1><%= member.name %> <%= member.surname %></h1>
+      </div>
+      <div>
+        <h2><%= member.bio.html %></h2>
+      </div>
+    </article>
+  <% }) %>
 </section>
 
 <%- include('./partials/foot') %>
