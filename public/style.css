@@ -1,54 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     max-width: 100%;
-}
-
-main {
-    display: grid;
-    grid: 
-    "sidebar header header header header"
-    "sidebar content content content content"
-    "sidebar content content content content"
-    "sidebar content content content content";
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 header {
-    grid-area: header;
-    margin-bottom: 1rem;
-    border-bottom: 2px;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    border-bottom: 1rem black;
+}
+
+header ul {
+    list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+header li {
+    margin: 0 10px;
+}
+
+header li a {
+    text-decoration: none;
 }
 
 nav {
-    grid-area: sidebar;
+	padding: 10px;
+	width: 200px;
+    border-right: 1rem black;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
 nav li {
-    display: inline;
-    text-align: center;
+    margin: 10px 0;
 }
 
 nav li a {
     text-decoration: none;
-    text-align: left;
-    display: block;
-    padding: 15px 0px 15px 60px;
-    font-weight: 800;
-    font-size: 26px;
 }
 
 section {
-    grid-area: content;
     max-width: 100%;
 }
 
 article {
     max-width: 100%;
+    border: 1rem black;
+    border-radius: 25px;
+    width: 25.625rem;
+    height: 20.25rem;
+}
+
+article h1 {
+    font-size: 1.875rem;
+}
+
+article div bio h2 {
+    font-size: 1rem;
+}
+
+article img {
+    max-width: 100%;
+    border-radius: 15px;
+    height: 7.5rem;
+    width: 7.5rem;
 }

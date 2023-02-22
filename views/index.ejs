@@ -1,16 +1,20 @@
 <%- include('./partials/head') %>
 
 <header>
-  <h1>Paginaoverzicht van <%= squad.name %></h1>
-  <li><a href="/?squad=squad-a-2022">squad a</a></li>
-  <li><a href="/?squad=squad-b-2022">squad b</a></li>
-  <li><a href="/?squad=squat-c-2022">squad c</a></li>
+  <h1>paginaoverzicht van <%= squad.name %></h1>
+  <ul>
+    <li><a href="/?squad=squad-a-2022">squad a</a></li>
+    <li><a href="/?squad=squad-b-2022">squad b</a></li>
+    <li><a href="/?squad=squat-c-2022">squad c</a></li>
+  </ul>
 </header>
 
 <nav>
-  <li>Sorteren op</li>
-  <li><a href="/?squad<%= squad.slug %>&orderBy=name">Naam</a></li>
-  <li><a href="">Achternaam</a></li>
+  <ul>
+    <li>sorteren op</li>
+    <li><a href="/?squad<%= squad.slug %>&orderBy=name">naam</a></li>
+    <li><a href="">achternaam</a></li>
+  </ul>
 </nav>
 
 <section class="squad-cards">
@@ -24,7 +28,7 @@
         <% } %>
         <h1><%= member.name %> <%= member.surname %></h1>
       </div>
-      <div>
+      <div class="bio">
         <% if (member.bio) { %>
           <h2><%= member.bio.html %></h2>
         <% }else{ %>
