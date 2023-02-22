@@ -4,7 +4,7 @@
   <h1>Paginaoverzicht van <%= squad.name %></h1>
   <li><a href="/?squad=squad-a-2022">squad a</a></li>
   <li><a href="/?squad=squad-b-2022">squad b</a></li>
-  <li><a href="/?squad=squad-c-2022">squad c</a></li>
+  <li><a href="/?squad=squat-c-2022">squad c</a></li>
 </header>
 
 <nav>
@@ -25,7 +25,11 @@
         <h1><%= member.name %> <%= member.surname %></h1>
       </div>
       <div>
-        <h2><%= member.bio.html %></h2>
+        <% if (member.bio) { %>
+          <h2><%= member.bio.html %></h2>
+        <% }else{ %>
+          <h2>no bio available</h2>
+        <% } %>
       </div>
     </article>
   <% }) %>
