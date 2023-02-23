@@ -34,19 +34,25 @@
   </nav>
 
   <section class="squad-cards">
+    <!-- Met deze express syntax kan ik json data aanroepen van de api en zeggen dat voor elke member in de api een kaart gemaakt moet worden -->
     <% squad.members.forEach(member => { %>
       <article>
         <div class="avatar-name">
           <div class="avatar">
+            <!-- Als de member in de api een foto heeft moet die vertoond worden,
+            daarnaast word de naam opgehaald van de member en deze in de alt gezet van de foto -->
           <% if (member.avatar) { %>
             <img src="<%= member.avatar %>" alt="De avatar van <%= member.name %>" />
+            <!-- Als de member in de api geen foto heeft dan moet er gebruik gemaakt worden van een default foto -->
             <% }else{ %>
             <img src="/placeholder.png" alt="Placeholder avatar" />
           <% } %>
           </div>
           <div class="name">
             <h1>
+              <!-- Door middel van deze express syntax kan de naam worden opgehaald van de api. De naam zit in het object van member -->
               <span class="name-name"><%= member.name %></span>
+              <!-- Hieronder gebeurt het zelfde als de code hierboven -->
               <span class="name-surname"><%= member.prefix %> <%= member.surname %></span>
             </h1>
           </div>
@@ -55,16 +61,20 @@
         <div class="info">
           <div class="website-role">
             <div class="info-role">
+              <!-- Door middel van deze express syntax kan de role worden opgehaald van de api. De role zit in het object van member -->
               <span><%= member.role %></span>
             </div>
+            <!-- Ook kan je met de express syntax een link ophalen en deze in een a tag zetten -->
             <a href="<%= member.website %>">
-              <span>website</span>
+              <span class="button">website</span>
             </a> 
           </div>
           <div class="color">
             <span>favoriete kleur:</span>
+            <!-- Hieronder maak ik weer gebruik van een if statement, dus als er een kleur is ingevuld door de member word deze vertoond -->
             <% if (member.colour) { %>
             <section style="background-color: <%= member.colour?.hex %>"></section>
+            <!-- En anders komt er een bericht te staan met dat er nog geen kleur beschikbaar is -->
             <% } else { %>
               <section>nog geen kleur bekend</section>
             <% } %>

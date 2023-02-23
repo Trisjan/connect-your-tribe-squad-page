@@ -19,7 +19,6 @@ app.use(express.static("public"));
 // omdat ik ook wilde sorteren op naam op de DESC manier
 
 app.get("/", (request, response) => {
-  // console.log(request.query.squad);  --> deze heb ik niet meer nodig
 
   // Uitleg request.query
 
@@ -34,8 +33,7 @@ app.get("/", (request, response) => {
   // Uitleg if/else statement:
   // als orderDirection gelijk is aan "desc" dan word "&direction=DESC"
   // toegevoegd aan "squadUrl", zo niet dan word "&direction=ASC"
-  // toegevoegd. Dit zorgt ervoor dat ik mijn pagina kan sorteren op
-  // ASC en DESC
+  // toegevoegd.
 
   if (orderDirection === "desc") {
     squadUrl += "&direction=DESC";

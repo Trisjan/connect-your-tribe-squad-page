@@ -120,11 +120,6 @@ article .name-surname::before {
     display: flex;
 }
 
-article h2 {
-    font-size: 1rem;
-    max-height: 100%;
-}
-
 article img {
     max-width: 100%;
     border-radius: 15px;
@@ -139,10 +134,48 @@ article .info {
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    height: 50%;
+}
+
+article .website-role {
+    display: grid;
+    align-items: center;
+}
+
+article .website-role .button {
+    display: flex;
+    height: 3rem;
+    width: 8rem;
+    border-radius: 5rem;
+    background-color: black;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+article .info-role {
+    display: flex;
+    justify-content: center;
+}
+
+article .info a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article .color {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 article .color section {
     width: 5rem;
     height: 5rem;
     border-radius: 5rem;
+    align-items: flex-end;
+    margin-top: 1rem;
 }
