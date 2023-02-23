@@ -63,10 +63,16 @@
           </div>
           <div class="color">
             <span>favoriete kleur:</span>
-            <section style="background-color: '<%= member.colour?.hex %>'"></section>
+            <% if (member.colour) { %>
+            <section style="background-color: <%= member.colour?.hex %>"></section>
+            <% } else { %>
+              <section>nog geen kleur bekend</section>
+            <% } %>
+            
           </div>
         </div>
       </article>
+    <% }) %>
   </section>
 </section>
 

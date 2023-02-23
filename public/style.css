@@ -140,3 +140,9 @@ article .info {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
+
+article .color section {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+}
