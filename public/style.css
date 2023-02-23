@@ -13,7 +13,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-    border-bottom: 1rem black;
+    border-bottom: 0.25rem solid black;
 }
 
 header ul {
@@ -33,8 +33,9 @@ header li a {
 
 nav {
 	padding: 10px;
-	width: 200px;
-    border-right: 1rem black;
+	width: 20vw;
+    border-right: 0.25rem solid black;
+    height: 100vh;
 }
 
 nav ul {
@@ -53,14 +54,18 @@ nav li a {
 
 section {
     max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 article {
     max-width: 100%;
-    border: 1rem black;
+    border: 0.125rem solid black;
     border-radius: 25px;
-    width: 25.625rem;
+    /* width: 25.625rem; */
     height: 20.25rem;
+    margin-left: 25vw;
 }
 
 article h1 {
@@ -76,4 +81,5 @@ article img {
     border-radius: 15px;
     height: 7.5rem;
     width: 7.5rem;
+    margin: 0.5rem;
 }

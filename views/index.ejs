@@ -8,35 +8,36 @@
     <li><a href="/?squad=squat-c-2022">squad c</a></li>
   </ul>
 </header>
+<section class="body">
+  <nav>
+    <ul>
+      <li>sorteren op</li>
+      <li><a href="/?squad<%= squad.slug %>&orderBy=name">naam</a></li>
+      <li><a href="">achternaam</a></li>
+    </ul>
+  </nav>
 
-<nav>
-  <ul>
-    <li>sorteren op</li>
-    <li><a href="/?squad<%= squad.slug %>&orderBy=name">naam</a></li>
-    <li><a href="">achternaam</a></li>
-  </ul>
-</nav>
-
-<section class="squad-cards">
-  <% squad.members.forEach(member => { %>
-    <article>
-      <div>
-        <% if (member.avatar) { %>
-          <img src="<%= member.avatar %>" alt="De avatar van <%= member.name %>" />
+  <section class="squad-cards">
+    <% squad.members.forEach(member => { %>
+      <article>
+        <div>
+          <% if (member.avatar) { %>
+            <img src="<%= member.avatar %>" alt="De avatar van <%= member.name %>" />
+            <% }else{ %>
+            <img src="/placeholder.png" alt="Placeholder avatar" />
+          <% } %>
+          <h1><%= member.name %> <%= member.surname %></h1>
+        </div>
+        <div class="bio">
+          <% if (member.bio) { %>
+            <h2><%= member.bio.html %></h2>
           <% }else{ %>
-          <img src="/placeholder.png" alt="Placeholder avatar" />
-        <% } %>
-        <h1><%= member.name %> <%= member.surname %></h1>
-      </div>
-      <div class="bio">
-        <% if (member.bio) { %>
-          <h2><%= member.bio.html %></h2>
-        <% }else{ %>
-          <h2>no bio available</h2>
-        <% } %>
-      </div>
-    </article>
-  <% }) %>
+            <h2>no bio available</h2>
+          <% } %>
+        </div>
+      </article>
+    <% }) %>
+  </section>
 </section>
 
 <%- include('./partials/foot') %>
