@@ -6,6 +6,7 @@
     padding: 0;
     max-width: 100%;
     font-family: 'IBM Plex Mono', monospace;
+    text-transform: lowercase;
 }
 
 header {
@@ -29,13 +30,24 @@ header li {
 
 header li a {
     text-decoration: none;
+    color: black;
+}
+
+.body {
+    max-width: 100%;
+    display: grid;
+    grid:
+    "sidebar body" 1fr
+    / 10% 1fr;
+    gap: 8px;
 }
 
 nav {
+    grid-area: sidebar;
 	padding: 10px;
 	width: 20vw;
     border-right: 0.25rem solid black;
-    height: 100vh;
+    height: 100%;
 }
 
 nav ul {
@@ -50,30 +62,67 @@ nav li {
 
 nav li a {
     text-decoration: none;
+    color: black;
 }
 
 section {
-    max-width: 100%;
+    grid-area: body;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-content: stretch;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
+    max-width: 100%;
 }
 
 article {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: center;
     max-width: 100%;
     border: 0.125rem solid black;
     border-radius: 25px;
-    /* width: 25.625rem; */
+    width: 25.625rem;
     height: 20.25rem;
-    margin-left: 25vw;
+    margin: 1rem;
 }
 
-article h1 {
-    font-size: 1.875rem;
+article hr {
+    opacity: 25%;
 }
 
-article div bio h2 {
+article .avatar-name {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+article .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+article .name-name {
+    display: flex;
+    justify-content: center;
+    height: 0.2rem;
+}
+
+article .name-surname::before {
+    content: "\a";
+    white-space: pre;
+    display: flex;
+}
+
+article h2 {
     font-size: 1rem;
+    max-height: 100%;
 }
 
 article img {
@@ -82,4 +131,12 @@ article img {
     height: 7.5rem;
     width: 7.5rem;
     margin: 0.5rem;
+}
+
+article .info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }

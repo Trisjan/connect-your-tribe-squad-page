@@ -25,7 +25,10 @@ app.get("/", (request, response) => {
 
   let slug = request.query.squad || "squad-a-2022";
   let orderBy = request.query.orderBy || "name";
+  let orderSurname = request.query.orderBy || "surname";
   let orderDirection = request.query.orderDirection || "asc";
+
+  let surnameUrl = url + slug + "?orderBy=" + orderSurname;
   let squadUrl = url + slug + "?orderBy=" + orderBy;
 
   // Uitleg if/else statement:
@@ -38,6 +41,12 @@ app.get("/", (request, response) => {
     squadUrl += "&direction=DESC";
   } else {
     squadUrl += "&direction=ASC";
+  }
+
+  if (orderDirection === "desc") {
+    surnameUrl += "&direction=DESC";
+  } else {
+    surnameUrl += "&direction=ASC";
   }
 
   fetchJson(squadUrl).then((data) => {

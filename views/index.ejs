@@ -2,7 +2,7 @@
 
 <header>
   <h1>paginaoverzicht van <%= squad.name %></h1>
-  <ul>
+  <ul class="squads">
     <li><a href="/?squad=squad-a-2022">squad a</a></li>
     <li><a href="/?squad=squad-b-2022">squad b</a></li>
     <li><a href="/?squad=squat-c-2022">squad c</a></li>
@@ -10,33 +10,63 @@
 </header>
 <section class="body">
   <nav>
-    <ul>
+    <ul class="sidebar-items">
       <li>sorteren op</li>
-      <li><a href="/?squad<%= squad.slug %>&orderBy=name">naam</a></li>
-      <li><a href="">achternaam</a></li>
+      <li>
+        naam
+        <ul>
+          <li><a href="/?squad=<%= squad.slug %>&orderBy=name&orderDirection=asc"
+            >A-Z</a>
+          </li>
+          <li><a href="/?squad=<%= squad.slug %>&orderBy=name&orderDirection=desc"
+            >Z-A</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        achternaam
+        <ul>
+          <li><a href="/?squad=<%= squad.slug %>&orderBy=surname&orderDirection=asc">A-Z</a></li>
+          <li><a href="/?squad=<%= squad.slug %>&orderBy=surname&orderDirection=desc">Z-A</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
   <section class="squad-cards">
     <% squad.members.forEach(member => { %>
       <article>
-        <div>
+        <div class="avatar-name">
+          <div class="avatar">
           <% if (member.avatar) { %>
             <img src="<%= member.avatar %>" alt="De avatar van <%= member.name %>" />
             <% }else{ %>
             <img src="/placeholder.png" alt="Placeholder avatar" />
           <% } %>
-          <h1><%= member.name %> <%= member.surname %></h1>
+          </div>
+          <div class="name">
+            <h1>
+              <span class="name-name"><%= member.name %></span>
+              <span class="name-surname"><%= member.prefix %> <%= member.surname %></span>
+            </h1>
+          </div>
         </div>
-        <div class="bio">
-          <% if (member.bio) { %>
-            <h2><%= member.bio.html %></h2>
-          <% }else{ %>
-            <h2>no bio available</h2>
-          <% } %>
+        <hr />
+        <div class="info">
+          <div class="website-role">
+            <div class="info-role">
+              <span><%= member.role %></span>
+            </div>
+            <a href="<%= member.website %>">
+              <span>website</span>
+            </a> 
+          </div>
+          <div class="color">
+            <span>favoriete kleur:</span>
+            <section style="background-color: '<%= member.colour?.hex %>'"></section>
+          </div>
         </div>
       </article>
-    <% }) %>
   </section>
 </section>
 
