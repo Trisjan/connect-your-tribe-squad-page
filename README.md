@@ -1,7 +1,7 @@
 > _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+# Squad page met members
+In dit project heb ik een squad page gemaakt met verschillende members, alle data is afkomstig uit een API.
 
 ## Inhoudsopgave
 
@@ -13,19 +13,28 @@
   * [Licentie](#licentie)
 
 ## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+In dit project kan je mijn visitekaartje vinden. Dit heb ik gemaakt doormiddel van Node.js en de data heb ik gehaald uit de API van mijn opleiding die hier te vinden is.
+
+![image](https://user-images.githubusercontent.com/74552944/229645143-32d70d35-1d98-4ae1-8df1-a81cde9da6f1.png)
+
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+* Node
+* Ejs
+* Express
+* API
+* CSS
+* HTML
 
 ## Installatie
-<!-- Bij Installatie staat stap-voor-stap beschreven hoe je de development omgeving moet inrichten om aan de repository te kunnen werken. -->
+Voor de installatie van Node als je dit project forked doe je het volgende in de terminal `npm install`
 
 ## Gebruik
+Voor het draaien van een server lokaal op je laptop doe je het volgende in de terminal `npm start`
 
 ## Bronnen
+* https://nl.pinterest.com/
+* [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
 ## Licentie
 
